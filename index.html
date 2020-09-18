@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/3492/3492202.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speak JS</title>
     <style>
-        .lites{
+        .lites {
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #181818;
+            color: white;
+        }
+
+        a {
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
-    <div id="audio" >
+    <div id="audio">
 
     </div>
     <div class="lites">
@@ -25,13 +39,18 @@
         <a class="waves-effect waves-light btn-small get" onclick="talker()">Speak it SpeakJS</a>
     </div>
     <script>
-        function talker(){
+        function talker() {
             const talked = document.querySelector("#first_name");
-            speak(talked.value);
+            if (talked.value == "") {
+                speak("Type something for me to say");
+            } else {
+                speak(talked.value);
+            }
         }
 
     </script>
     <script src="./speakClient.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
