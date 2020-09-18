@@ -42,7 +42,7 @@
         function talker() {
             const talked = document.querySelector("#first_name");
             if (talked.value == "") {
-                speak("Type something for me to say");
+                speak("Type something for me to say", { voice: 'fr' });
             } else {
                 speak(talked.value);
             }
